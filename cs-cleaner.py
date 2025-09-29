@@ -165,9 +165,9 @@ def removeHash():
 
                     print(str(line_count-1)+". Hash:"+hash+"|- Remove Status:- "+remove_status)
 
+#----Select required function and comment rest----
 #login_para = csLogIn()
 #auth_info = checkAvailableSites(login_para[1])
 #auth_info = cidChange(auth_info[0],auth_info[1],auth_info[2])
 #savePreventionList(auth_info[0],auth_info[1])
-
 removeHash()
