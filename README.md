@@ -31,12 +31,13 @@ This script checks hash values from the prevention list against **VirusTotal**.
 4. Check the downloaded blacklist hashes in VirusTotal using `vt-checker.py`  
 5. Using the results from `vt-checker.py`, remove unwanted IOCs from the CrowdStrike prevention list with the hash removal function in `cs-cleaner.py`  
 
-```mermaid
-flowchart TD
-    A[Start] --> B[cs-cleaner.py: Login to CS (client ID & secret)]
-    B --> C[cs-cleaner.py: Select correct CID]
-    C --> D[cs-cleaner.py: Download prevention list]
-    D --> E[vt-checker.py: Check hashes in VirusTotal (Falcon engine)]
-    E --> F[Filter: keep hashes identified by Falcon]
-    F --> G[cs-cleaner.py: Remove unwanted IOCs from prevention list]
-    G --> H[End]
+Note: cs-cleaner.py contains multiple functions.
+For each step, make sure you select and call the relevant function (e.g., savePreventionList() for downloading, removeHash() for removal).
+
+## Planned Improvements
+
+A more streamlined version of cs-cleaner.py is planned for release after further testing.
+
+This updated version will remove the need to manually select functions for each step, providing a cleaner workflow.
+
+The goal is to make the process easier to run end-to-end with fewer manual edits.
