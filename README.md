@@ -6,6 +6,11 @@ Back in 2022, we faced an issue with the **CrowdStrike blacklist**. Due to a pla
 Many of these entries were old IOCs that no longer needed to remain in the blacklist, as they were already being detected by CrowdStrike itself.  
 We needed a way to clean up the list and only keep the IOCs that were not natively detected by CrowdStrike.
 
+## Why This Project Was Created
+At the time this script was developed, there was **no official CrowdStrike API endpoint** available to perform the prevention list cleaning task automatically.  
+To overcome this limitation, the workflow was reverse-engineered by **tracking web requests through Burp Suite** while manually managing the prevention list within the Falcon console.  
+The captured requests and responses were then used to reconstruct the necessary HTTP operations in Python, allowing this process to be automated safely and repeatably.
+
 ## Solution
 To solve this problem, two Python scripts were developed:
 
